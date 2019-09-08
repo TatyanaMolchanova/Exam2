@@ -56,6 +56,12 @@ header {
 	width: 96%;
 	padding: 0 15px;
 	margin: 0 auto;
+	&--sm {
+		max-width: 700px;
+		width: 96%;
+		padding: 0 15px;
+		margin: 0 auto;
+	}
 }
 
 .cover {
@@ -158,6 +164,9 @@ nav {
     justify-content: space-around;
     padding: 0;
     margin: 0;
+    &--sm {
+    	width: 25%;
+    }
 }
 
 .social {
@@ -258,6 +267,10 @@ nav {
 		    display: block;
 		    margin: 50px auto;
 		}
+		&--sm {
+			line-height: 0;
+			margin-bottom: 50px;
+		}
 	}
 	&__box {
 		margin-top: 160px;
@@ -332,7 +345,6 @@ nav {
 	    z-index: 1;
 	    bottom: 0;
 	}
-
 }
 
 .carousel {
@@ -482,4 +494,169 @@ nav {
 		}
 	}
 
+}
+
+.gallery {
+	&__wrap {
+		display: flex;
+	}
+	&__flex {
+		width: 50%;
+		&:last-child {
+			display: flex;
+		    flex-wrap: wrap;
+		}
+		&:first-child {
+			margin-right: 7px;
+		}
+		img {
+			max-width: 97%;
+		}
+		iframe {
+			width: 100%;
+    		height: 100%;
+		}
+	}
+	&__item {
+		width: calc(50% - 7px);
+		line-height: 0;
+		img {
+			max-width: 100%;
+		}
+		&:nth-child(1),
+		&:nth-child(3) {
+			margin-right: 7px;
+		}
+		&:nth-child(1),
+		&:nth-child(2) {
+			margin-bottom: 7px;
+		}
+	}
+	&__box {
+		margin-top: 60px;
+    	text-align: center;
+	}
+}
+
+.section {
+	height: 100vh;
+}
+
+ #map {
+    height: 100%; 
+    width: 100%; 
+}
+
+.footer {
+	height: 60vh;
+	background-image: linear-gradient(to left, rgba(126, 90, 255, 0.7), rgba(85, 183, 255, 0.7)); 
+    position: relative;
+	&__bgc img {
+		position: absolute;
+	    z-index: -1;
+	    top: 0;
+    	right: 0;
+	}
+	&__wrap {
+		padding-top: 20vh;
+		display: flex;
+    	justify-content: space-between;
+    	align-items: center;
+	}
+	&__copyright {
+		color: $white;
+		font-family: GothamBook;
+		font-size: 1.4rem;
+		a {
+			color: $white;
+			text-decoration: none;
+		}
+		svg {
+			fill: $white;
+		}
+		span:first-child {
+			margin-right: 15px;
+		}
+		span:first-child:after {
+			content: "";
+			border-right: 1px solid $white;
+			padding-right: 15px;
+		}
+			a {
+				@include hover {
+				box-shadow: 0px 0px 20px #fff;
+				border-radius: 5px;
+			}
+		}
+	}
+	.social__link {
+		@include hover {
+			box-shadow: 0px 0px 20px #fff;
+		}
+	}  
+	&__logo{
+		@include hover {
+			box-shadow: 0px 0px 20px #fff;
+    		border-radius: 20px;
+		}
+	}				
+}
+
+.contacts {
+	position: absolute;
+    top: -60%;
+    background-color: white;
+    left: 50%;
+    transform: translate(-50%, 10%);
+    height: 450px;
+    &__bgc {
+    	img {
+    		position: relative;
+    		z-index: -2;
+    		bottom: -105px;
+    	}
+    }
+    &__wrap {
+    	display: flex;
+    	position: absolute;
+    }
+    &__contacts {
+    	width: 350px;
+    	&__item {
+    		font-family: GothamBook;
+    		font-size: 1.8rem;
+    	}
+    	a {
+			color: $main;
+			text-decoration: none;
+		}
+    }
+    &__form {
+    	width: 350px;
+	    display: flex;
+	    flex-direction: column;
+	    align-items: flex-end;
+	    input {
+	    	width: 350px;
+	    	border: none;
+    		border-bottom: 1px solid $main;
+    		padding: 20px 0;
+    		outline: none;
+		}
+		input[type="submit"] {
+			margin-top: 30px;
+		    width: 40%;
+		    border: 1px solid black;
+		    background-color: transparent;
+		    padding: 15px;
+		    &:hover,
+		    &:focus,
+		    &:active {
+		    	box-shadow: 0px 0px 20px #4b5562;
+		    }
+		}  
+    }
+    svg {
+    	fill: $blue-dark;
+    }
 }
